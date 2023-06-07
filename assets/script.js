@@ -1,3 +1,4 @@
+
 const slides = [
 	{
 		"image":"slide1.jpg",
@@ -16,3 +17,29 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
+
+
+function clicLeftCarrousel() {
+	console.log(slides.length)
+}
+
+function clicRightCarrousel() {
+	console.log('ogstelko')
+}
+
+function addClickListenerArrowsLeft() {
+	let arrowLeft = document.getElementById("arrowleft")
+	arrowLeft.addEventListener("click", () => {
+		clicLeftCarrousel()
+	})
+}
+
+function addClickListenerArrowsRight() {
+	let arrowRight = document.getElementById("arrowright")
+	arrowRight.addEventListener("click", () => {
+		clicRightCarrousel()
+	})
+}
+
+addClickListenerArrowsLeft()
+addClickListenerArrowsRight()
