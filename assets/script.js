@@ -31,19 +31,18 @@ arrowRight.addEventListener("click", () => {
 })
 
 // 2. Elements utiles aux fonctions pour les flèches
-const urlImageBanner = slides.map(slide => slide.image)
-const textImage = slides.map(slide => slide.tagLine)
+// const urlImageBanner = slides.map(slide => slide.image)
+// const textImage = slides.map(slide => slide.tagLine)
 //condition si pas de tagLine
 
 let imgCarrousel = document.querySelector(".banner-img")
 let textCarrousel = document.querySelector("#banner p")
 
 let i = 0
-imgCarrousel.src = `./assets/images/slideshow/${urlImageBanner[i]}`
-textCarrousel.innerHTML = `${textImage[i]}`
-
-// imgCarrousel.src = `./assets/images/slideshow/${slides[i].image}`
-
+// imgCarrousel.src = `./assets/images/slideshow/${urlImageBanner[i]}`
+// textCarrousel.innerHTML = `${textImage[i]}`
+imgCarrousel.src = `./assets/images/slideshow/${slides[i].image}`
+textCarrousel.innerHTML = `${slides[i].tagLine}`
 
 // ---> "Dots" du carrousel
 // 1. Déclaration de notre division "dots" pour y lier no "dot"
@@ -70,8 +69,10 @@ function changeImg(value) {
 	} else if (i >= slides.length) {
 		i = 0
 	}
-	imgCarrousel.src = `./assets/images/slideshow/${urlImageBanner[i]}`
-	textCarrousel.innerHTML = `${textImage[i]}`
+	// imgCarrousel.src = `./assets/images/slideshow/${urlImageBanner[i]}`
+	imgCarrousel.src = `./assets/images/slideshow/${slides[i].image}`
+	// textCarrousel.innerHTML = `${textImage[i]}`
+	textCarrousel.innerHTML = `${slides[i].tagLine}`
 	selectedDot = document.getElementsByClassName("dot")[i]
 	selectedDot.classList.add("dot_selected")
 }
